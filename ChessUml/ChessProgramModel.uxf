@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.3">
+  <zoom_level>7</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>413</x>
+      <y>112</y>
+      <w>392</w>
+      <h>406</h>
+    </coordinates>
+    <panel_attributes>bg=green
+Piece
+--
+Fields
+- ChessColor: color
+- Square: location
+- PieceType: type
+- Boolean: canEnPassant
+- Boolean: hasCastled
+- Boolean canCastle
+- int: movesCount
+--
+Getters and Setters
++ getColor(): ChessColor
++ getLocation(): Square
++ getType(): PieceType
++ canEnPassant(): Boolean
++ hasCastled(): Boolean
++ canCastle(): Boolean
++ getMovesCount(): int
+ 
++ setColor(ChessColor _newColor): void
++ setType(PieceType _type): void
++ setEnPassant(Boolean _canEnPassant): void
++ setHasCastled(Boolean _hasCastled): void
++ setCanCastle(Boolean _canCastle): void
++ setMovesCount(int _movesMade): void
++ setLocation(Square _targetLocation): void
+--
+Constructors
++ Piece(ChessColor _color, PieceType _type, Square _location): Piece
++ Piece(Piece _pieceToCopy): Piece
+--
+Methods
+
++ isValidMove(Square _location, Board _board): Boolean
++ incMovesCount(): void
++ canTakePiece(Piece _targetPiece, Board _board): Boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>28</x>
+      <y>98</y>
+      <w>350</w>
+      <h>539</h>
+    </coordinates>
+    <panel_attributes>bg=green
+Board
+--
+Fields
+- ChessColor: currentMovePlayer
+- Array&lt;Array&lt;ChessPiece&gt;&gt;: piecesArray(64)
+- boolean: startedUp
+- int: movesMadeSinceEnPassant
+- boolean canEnPassant
+- int: RANK_SIZE = 8 {final}
+- int: FILE_SIZE = 8 {final}
+--
+Getters and Setters
++ getMovesMadeSinceEnPassant(): int
++ getCurrentMovePlayer(): ChessColor
++ setCurrentMovePlayer(ChessColor _color): void
++ isStartedUp(): Boolean
++ setStartedUp(Boolean _isStartedUp): void
++ getEnPassant(): Boolean
++ getRankSize(): int
++ getFileSize(): int
++ getPiece(Sqauare _coordinates): Piece
++ setStartingPosition(Piece[][] _pieces): void {final}
+
+--
+Constructors
++ Board(Board _board): Board
++ Board(): Board
+--
+Methods
++ isKingUnderAttack(ChessColor _color, Square _location): Boolean
+- promotePawn(Piece _piece, Board _board, Square _location): void
++ spawnPiece(Piece _piece): void
++ getKingPosition(ChessColor _color): Square
++ isSquareUnderAttack(ChessColor _color, Square _coordinates): Boolean
+- deactivateEnPassant(ChessColor _color): void
+- getChessPiecesArray(): Array&lt;Array&lt;ChessPiece&gt;&gt;
++ killPosition(Square _location): void
++ setEnPassantForPiece(Square _location, Boolean _activated): void
++ doesPieceBelongToPlayer(ChessColor _color, Piece _piece): Boolean
+- clearBoard(ChessPiece[][] _pieces): void
+- checkForMove(Piece _thisPiece, Board _board): Boolean
+- staleMateDetection(Color _color, Board _board): Boolean
+- checkForValidMove(Piece _thisPiece, Board _board): Boolean
+- checkMateDetection(Color _color, Board _board): Boolean
+- setPiecePosition(Piece _piece, Square _location): void
+- moveRemovesCheck(Piece _piece, Board _board, Square _location): Boolean
+- moveAppliesCheck(Piece _piece, Board _board, Square _location): Boolean
+- movePiece(Piece _piece, Board _board, Square _location): Boolean
+ </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>406</x>
+      <y>525</y>
+      <w>224</w>
+      <h>196</h>
+    </coordinates>
+    <panel_attributes>bg=cyan
+Square
+--
+Fields
+- int: rank
+- int: file
+--
+Getters and Setters
++ getRank(): int
++ getFile(): int
++ setRank(int _rank): void
++ setFile(int _file): void
++ toString(): String
+--
+Constructors
++ Square(int _rank, int _file): Square
++ Square(Point _point): Square
+--
+Methods
++ equals(Square _squareToCompare): Boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>651</x>
+      <y>532</y>
+      <w>357</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>ChessMovement
+bg=yellow
+--
+Static methods
++ destinationCheck(Piece _piece, Board _board, Square _destSquare): Boolean
++ pawnMove(Piece _piece, Board _board, Square _destSquare): Boolean
++ rookMove(Piece _piece, Board _board, Square _destSquare): Boolean
++ knightMove(Piece _piece, Board _board, Square _destSquare): Boolean
++ bishopMove(Piece _piece, Board _board, Square _destSquare): Boolean
++ queenMove(Piece _piece, Board _board, Square _destSquare): Boolean
++ kingMove(Piece _piece, Board _board, Square _destSquare): Boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>889</x>
+      <y>126</y>
+      <w>105</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>bt=.
+Enum: PieceType
+--
+bg=light_gray
+PAWN
+ROOK
+KNIGHT
+BISHOP
+QUEEN
+KING
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>889</x>
+      <y>224</y>
+      <w>105</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>bt=.
+Enum: ChessColor
+--
+bg=light_gray
+WHITE
+BLACK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>455</x>
+      <y>490</y>
+      <w>62</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+
+ 
+1</panel_attributes>
+    <additional_attributes>21;28;49;35</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>357</x>
+      <y>126</y>
+      <w>69</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+
+ 
+32</panel_attributes>
+    <additional_attributes>21;21;56;91</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>637</x>
+      <y>490</y>
+      <w>104</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+Refers To</panel_attributes>
+    <additional_attributes>91;42;21;28</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Package</type>
+    <coordinates>
+      <x>0</x>
+      <y>14</y>
+      <w>1435</w>
+      <h>784</h>
+    </coordinates>
+    <panel_attributes>ChessPackage</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1085</x>
+      <y>112</y>
+      <w>280</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>*ChessView*
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>21</x>
+      <y>70</y>
+      <w>1001</w>
+      <h>672</h>
+    </coordinates>
+    <panel_attributes>*ChessModel*
+
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1099</x>
+      <y>133</y>
+      <w>259</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>
+ChessCanvas
+{extends java.awt.Canvas}
+--
+bg=red
+Includes 1 ChessModel
+Includes fields and methods to handle drawing the model.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1001</x>
+      <y>119</y>
+      <w>97</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+ 
+1</panel_attributes>
+    <additional_attributes>84;49;21;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1050</x>
+      <y>252</y>
+      <w>350</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>*ChessController*
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1057</x>
+      <y>280</y>
+      <w>336</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>ChessController
+{extends javax.swing.JFrame}
+--
+bg=blue
+Includes a ChessView
+Includes fields and methods to handle input and output
+Includes methods to handle logical interaction 
+  between Controller, View and Model</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1148</x>
+      <y>182</y>
+      <w>48</w>
+      <h>83</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>35;70;21;21</additional_attributes>
+  </element>
+</diagram>

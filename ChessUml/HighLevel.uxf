@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.3">
+  <zoom_level>6</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>330</x>
+      <y>222</y>
+      <w>222</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>Play Manager
+--
+Gets Users from Various Platforms to play chess
+Manages all these users real-time
+Opens new connections for them and sets games up appropriately for them
+Manages the user database(s), rankings etc.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>282</x>
+      <y>324</y>
+      <w>60</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>18;18;48;72;18;150</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>810</x>
+      <y>360</y>
+      <w>84</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>Players Input Stream</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>768</x>
+      <y>354</y>
+      <w>54</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>18;18;42;18</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Package</type>
+    <coordinates>
+      <x>204</x>
+      <y>414</y>
+      <w>96</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Connected User</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Package</type>
+    <coordinates>
+      <x>204</x>
+      <y>300</y>
+      <w>96</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Connected User</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>282</x>
+      <y>324</y>
+      <w>60</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>18;150;48;72;18;18</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Package</type>
+    <coordinates>
+      <x>330</x>
+      <y>210</y>
+      <w>456</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>Server
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>582</x>
+      <y>222</y>
+      <w>204</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>Connection Manager
+--
+Respond to connection requests:
+1) Setup a new connection for this request.
+2) Add this connection to a pool.
+3) Do whatever preparations for connecting two users.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>534</x>
+      <y>360</y>
+      <w>60</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>18;18;48;18</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>534</x>
+      <y>360</y>
+      <w>60</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>48;18;18;18</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Package</type>
+    <coordinates>
+      <x>906</x>
+      <y>390</y>
+      <w>96</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>Random User:
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Package</type>
+    <coordinates>
+      <x>906</x>
+      <y>264</y>
+      <w>96</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Random User:
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>840</x>
+      <y>288</y>
+      <w>78</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>18;72;66;18</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>834</x>
+      <y>366</y>
+      <w>84</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>18;18;72;90</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>912</x>
+      <y>444</y>
+      <w>78</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Setup Phase
+--
+Model
+View
+Controller</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>216</x>
+      <y>438</y>
+      <w>78</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Play Phase
+--
+Model
+View
+Controller</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>216</x>
+      <y>324</y>
+      <w>78</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Play Phase
+--
+Model
+View
+Controller</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>912</x>
+      <y>306</y>
+      <w>78</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Setup Phase
+--
+Model
+View
+Controller</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Package</type>
+    <coordinates>
+      <x>180</x>
+      <y>186</y>
+      <w>840</w>
+      <h>348</h>
+    </coordinates>
+    <panel_attributes>High Level</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
